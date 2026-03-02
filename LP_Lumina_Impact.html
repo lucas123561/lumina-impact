@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lumina Impact - ESG que transforma estratégia em impacto real. Consultoria estratégica especializada em ESG, governança, compliance e sustentabilidade.">
+    <title>Lumina Impact - ESG que transforma estratégia em impacto real</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== RESET & GENERAL ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        /* ===== BRAND COLORS ===== */
+        :root {
+            --lumina-blue: #1A3A52;
+            --lumina-teal: #17A2B8;
+            --lumina-green: #6B9E3E;
+            --lumina-gold: #C9A961;
+            --gray-light: #F8F9FA;
+            --gray-medium: #E5E7EB;
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 2px 30px rgba(0,0,0,0.15);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-nav {
+            height: 50px;
+            transition: height 0.3s ease;
+        }
+        
+        .navbar.scrolled .logo-nav {
+            height: 40px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--lumina-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--lumina-teal);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--lumina-teal);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .cta-btn-nav {
+            background: var(--lumina-green);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(107, 158, 62, 0.3);
+        }
+        
+        .cta-btn-nav:hover {
+            background: #5a8533;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(107, 158, 62, 0.4);
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #F8F9FA 0%, #E8EEF2 100%);
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(107, 158, 62, 0.08), transparent 70%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            padding: 40px 30px;
+            z-index: 10;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-logo {
+            max-width: 450px;
+            margin: 0 auto 40px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero-tagline {
+            font-size: 2.8rem;
+            color: var(--lumina-blue);
+            margin-bottom: 30px;
+            font-weight: 300;
+            line-height: 1.3;
+        }
+        
+        .hero-tagline strong {
+            font-weight: 700;
+            color: var(--lumina-green);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background: var(--lumina-blue);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(26, 58, 82, 0.3);
+        }
+        
+        .hero-cta:hover {
+            background: var(--lumina-teal);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(23, 162, 184, 0.4);
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        .scroll-indicator i {
+            font-size: 2rem;
+            color: var(--lumina-teal);
+        }
+        
+        /* ===== SECTION GENERAL ===== */
+        section {
+            padding: 100px 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--lumina-gold);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            color: var(--lumina-blue);
+            margin-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* ===== QUEM SOMOS ===== */
+        #quem-somos {
+            background: white;
+        }
+        
+        .narrative-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #444;
+            text-align: justify;
+        }
+        
+        .narrative-content p {
+            margin-bottom: 25px;
+        }
+        
+        .narrative-content strong {
+            color: var(--lumina-blue);
+            font-weight: 700;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, var(--lumina-blue), var(--lumina-teal));
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .highlight-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        /* ===== POR QUE AGORA ===== */
+        #por-que-agora {
+            background: var(--gray-light);
+        }
+        
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+        
+        .column-box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .column-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .column-box.benefits h3 {
+            color: var(--lumina-green);
+        }
+        
+        .column-box.risks h3 {
+            color: #D32F2F;
+        }
+        
+        .column-box ul {
+            list-style: none;
+        }
+        
+        .column-box li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-medium);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .column-box li:last-child {
+            border-bottom: none;
+        }
+        
+        .column-box li i {
+            margin-top: 3px;
+            font-size: 1.2rem;
+        }
+        
+        .benefits li i {
+            color: var(--lumina-teal);
+        }
+        
+        .risks li i {
+            color: #D32F2F;
+        }
+        
+        .warning-text {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--lumina-blue);
+            padding: 30px;
+            background: white;
+            border-left: 6px solid var(--lumina-gold);
+            border-radius: 10px;
+        }
+        
+        /* ===== VANTAGEM COMPETITIVA ===== */
+        #vantagem {
+            background: white;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .benefit-card {
+            background: var(--gray-light);
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--lumina-teal);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-card i {
+            font-size: 3rem;
+            color: var(--lumina-teal);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h4 {
+            font-size: 1.2rem;
+            color: var(--lumina-blue);
+            margin-bottom: 10px;
+        }
+        
+        .closing-statement {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--lumina-green);
+        }
+        
+        /* ===== ABORDAGEM ===== */
+        #abordagem {
+            background: var(--gray-light);
+        }
+        
+        .methodology-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 50px 0;
+        }
+        
+        .method-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid var(--lumina-teal);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .method-card h4 {
+            font-size: 1.2rem;
+            color: var(--lumina-blue);
+            margin-bottom: 10px;
+        }
+        
+        .results-box {
+            background: linear-gradient(135deg, var(--lumina-green), #5a8533);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .results-box h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+        
+        .results-list {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .result-item {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .result-item i {
+            margin-right: 10px;
+            color: var(--lumina-gold);
+        }
+        
+        /* ===== ENTREGÁVEIS ===== */
+        #entregaveis {
+            background: white;
+        }
+        
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .deliverable-item {
+            background: var(--gray-light);
+            padding: 30px;
+            border-radius: 12px;
+            display: flex;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .deliverable-item:hover {
+            background: white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .deliverable-icon {
+            font-size: 2.5rem;
+            color: var(--lumina-green);
+            flex-shrink: 0;
+        }
+        
+        .deliverable-content h4 {
+            font-size: 1.1rem;
+            color: var(--lumina-blue);
+            margin-bottom: 8px;
+        }
+        
+        .deliverable-content p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+        
+        /* ===== PARA QUEM ===== */
+        #para-quem {
+            background: var(--gray-light);
+        }
+        
+        .target-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .target-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .target-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .target-card i {
+            font-size: 3rem;
+            color: var(--lumina-blue);
+            margin-bottom: 20px;
+        }
+        
+        .target-card h4 {
+            font-size: 1.1rem;
+            color: var(--lumina-blue);
+        }
+        
+        /* ===== SETORES ===== */
+        #setores {
+            background: white;
+        }
+        
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+        
+        .sector-card {
+            background: var(--lumina-blue);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .sector-card:hover {
+            background: var(--lumina-teal);
+            transform: scale(1.05);
+        }
+        
+        .sector-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .sector-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        /* ===== DIFERENCIAIS ===== */
+        #diferenciais {
+            background: linear-gradient(135deg, var(--lumina-blue) 0%, #0f2535 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        #diferenciais .section-label {
+            color: var(--lumina-gold);
+        }
+        
+        #diferenciais .section-title {
+            color: white;
+        }
+        
+        #diferenciais .section-subtitle {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .manifesto-text {
+            max-width: 900px;
+            margin: 50px auto;
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+        
+        .competencies-highlight {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--lumina-gold);
+            margin: 40px 0;
+        }
+        
+        .manifesto-statement {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-top: 50px;
+            line-height: 1.4;
+        }
+        
+        .manifesto-statement strong {
+            font-weight: 700;
+            color: var(--lumina-green);
+        }
+        
+        /* ===== COMPETÊNCIAS ===== */
+        #competencias {
+            background: white;
+        }
+        
+        .competencies-matrix {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .competency-column h3 {
+            font-size: 1.5rem;
+            color: white;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .competency-column:nth-child(1) h3 {
+            background: var(--lumina-blue);
+        }
+        
+        .competency-column:nth-child(2) h3 {
+            background: var(--lumina-teal);
+        }
+        
+        .competency-column:nth-child(3) h3 {
+            background: var(--lumina-green);
+        }
+        
+        .competency-list {
+            list-style: none;
+        }
+        
+        .competency-list li {
+            background: var(--gray-light);
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .competency-list li i {
+            color: var(--lumina-teal);
+        }
+        
+        .results-banner {
+            background: var(--lumina-gold);
+            color: white;
+            padding: 50px;
+            border-radius: 15px;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .results-banner h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .result-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        
+        /* ===== EQUIPE ===== */
+        #equipe {
+            background: var(--gray-light);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .team-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: var(--lumina-blue);
+            margin: 40px auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            font-weight: 300;
+            border: 6px solid var(--lumina-teal);
+        }
+        
+        .team-card:nth-child(2) .team-photo {
+            border-color: var(--lumina-green);
+        }
+        
+        .team-card:nth-child(3) .team-photo {
+            border-color: var(--lumina-gold);
+        }
+        
+        .team-content {
+            padding: 0 30px 40px;
+            text-align: center;
+        }
+        
+        .team-name {
+            font-size: 1.8rem;
+            color: var(--lumina-blue);
+            margin-bottom: 10px;
+        }
+        
+        .team-role {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .team-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .tag {
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .tag-blue { background: rgba(26, 58, 82, 0.1); color: var(--lumina-blue); }
+        .tag-teal { background: rgba(23, 162, 184, 0.1); color: var(--lumina-teal); }
+        .tag-green { background: rgba(107, 158, 62, 0.1); color: var(--lumina-green); }
+        .tag-gold { background: rgba(201, 169, 97, 0.1); color: #9A7D3A; }
+        
+        .team-bio {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        
+        .team-highlights {
+            list-style: none;
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        .team-highlights li {
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: #666;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .team-highlights li i {
+            color: var(--lumina-teal);
+            margin-top: 3px;
+        }
+        
+        /* ===== CTA FINAL ===== */
+        #cta-final {
+            background: linear-gradient(135deg, var(--lumina-green) 0%, #5a8533 100%);
+            color: white;
+            text-align: center;
+            padding: 120px 30px;
+        }
+        
+        .cta-logo {
+            max-width: 350px;
+            margin: 0 auto 50px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .cta-messages {
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        .cta-message {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin: 20px 0;
+            line-height: 1.3;
+        }
+        
+        .cta-message strong {
+            font-weight: 700;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--lumina-blue);
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: var(--lumina-green);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--lumina-blue);
+            color: white;
+            padding: 60px 30px 30px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-about h3 {
+            margin-bottom: 20px;
+        }
+        
+        .footer-about p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+        }
+        
+        .footer-links h4 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--lumina-teal);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--lumina-teal);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 968px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero-tagline {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .two-columns,
+            .methodology-cards,
+            .deliverables-grid,
+            .competencies-matrix,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .target-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .sectors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-message {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <img src="https://www.genspark.ai/api/files/s/5KKipCx3" alt="Lumina Impact" class="logo-nav">
+            <ul class="nav-menu">
+                <li><a href="#quem-somos" class="nav-link">Quem Somos</a></li>
+                <li><a href="#abordagem" class="nav-link">Abordagem</a></li>
+                <li><a href="#entregaveis" class="nav-link">Serviços</a></li>
+                <li><a href="#equipe" class="nav-link">Equipe</a></li>
+                <li><a href="#cta-final" class="cta-btn-nav">Fale Conosco</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="https://www.genspark.ai/api/files/s/5KKipCx3" alt="Lumina Impact" class="hero-logo">
+            <h1 class="hero-tagline">ESG que transforma <strong>estratégia</strong> em <strong>impacto real</strong>.</h1>
+            <p class="hero-subtitle">Consultoria estratégica em ESG que protege valor e sustenta crescimento.</p>
+            <a href="#quem-somos" class="hero-cta">Conheça Nossa Abordagem</a>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- QUEM SOMOS -->
+    <section id="quem-somos">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Institucional</div>
+                <h2 class="section-title">Quem Somos</h2>
+            </div>
+            
+            <div class="narrative-content">
+                <p>Em um cenário de <strong>alta pressão regulatória</strong>, escassez de crédito barato, exigências crescentes de governança e vigilância reputacional permanente, empresas que não estruturam sua agenda ESG assumem <strong>riscos financeiros, jurídicos e estratégicos</strong> cada vez maiores.</p>
+                
+                <p>A Lumina Impact nasce exatamente nesse ponto crítico: onde decisões mal estruturadas custam caro, e decisões bem orientadas <strong>protegem valor, viabilizam crescimento e garantem acesso ao capital</strong>.</p>
+                
+                <p>Somos uma <strong>consultoria estratégica em ESG</strong> formada por uma equipe multidisciplinar, altamente especializada, que atua na interseção entre: <strong>estratégia corporativa, governança, ciência, regulação e finanças</strong>.</p>
+                
+                <div class="highlight-box">
+                    <h3>Estruturamos decisões que sustentam negócios no longo prazo.</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POR QUE AGORA -->
+    <section id="por-que-agora">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Contexto de Mercado</div>
+                <h2 class="section-title">Por que sua empresa precisa da Lumina agora?</h2>
+            </div>
+            
+            <div class="two-columns">
+                <div class="column-box benefits">
+                    <h3><i class="fas fa-check-circle"></i> O ESG passou a ser critério objetivo para:</h3>
+                    <ul>
+                        <li><i class="fas fa-arrow-right"></i> <span>Acesso a crédito e financiamentos</span></li>
+                        <li><i class="fas fa-arrow-right"></i> <span>Redução do custo de capital</span></li>
+                        <li><i class="fas fa-arrow-right"></i> <span>Participação em grandes contratos</span></li>
+                        <li><i class="fas fa-arrow-right"></i> <span>Permanência em cadeias de fornecimento</span></li>
+                        <li><i class="fas fa-arrow-right"></i> <span>Mitigação de riscos jurídicos e regulatórios</span></li>
+                        <li><i class="fas fa-arrow-right"></i> <span>Proteção da reputação corporativa</span></li>
+                    </ul>
+                    <p style="margin-top: 20px; font-weight: 600;">Hoje, bancos, investidores, grandes compradores e órgãos reguladores exigem <strong>conformidade ESG real, comprovável e rastreável</strong>.</p>
+                </div>
+                
+                <div class="column-box risks">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Empresas que não se estruturam:</h3>
+                    <ul>
+                        <li><i class="fas fa-times-circle"></i> <span>Pagam mais caro por crédito</span></li>
+                        <li><i class="fas fa-times-circle"></i> <span>Perdem contratos estratégicos</span></li>
+                        <li><i class="fas fa-times-circle"></i> <span>Ficam expostas a sanções regulatórias</span></li>
+                        <li><i class="fas fa-times-circle"></i> <span>Assumem riscos reputacionais severos</span></li>
+                        <li><i class="fas fa-times-circle"></i> <span>Perdem competitividade</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="warning-text">
+                Não se trata mais de escolha. Trata-se de <strong>sobrevivência empresarial</strong>.
+            </div>
+        </div>
+    </section>
+
+    <!-- VANTAGEM COMPETITIVA -->
+    <section id="vantagem">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Diferencial Estratégico</div>
+                <h2 class="section-title">ESG como Vantagem Competitiva</h2>
+                <p class="section-subtitle">Nossa atuação conecta o ESG diretamente à estratégia de negócios, estruturando organizações para que sejam:</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Mais Seguras Juridicamente</h4>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Mais Eficientes Financeiramente</h4>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Mais Atrativas para Investidores</h4>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-building"></i>
+                    <h4>Mais Sólidas Institucionalmente</h4>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-trophy"></i>
+                    <h4>Mais Competitivas em Seus Mercados</h4>
+                </div>
+            </div>
+            
+            <p class="closing-statement">
+                Transformamos o ESG em instrumento real de proteção de valor, viabilidade financeira e fortalecimento institucional.
+            </p>
+        </div>
+    </section>
+
+    <!-- ABORDAGEM -->
+    <section id="abordagem">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Metodologia</div>
+                <h2 class="section-title">Nossa Abordagem: Decisão, não apenas Diagnóstico</h2>
+                <p class="section-subtitle">Enquanto o mercado entrega relatórios e selos, a Lumina atua onde realmente importa: na <strong>tomada de decisão executiva</strong>.</p>
+            </div>
+            
+            <div class="methodology-cards">
+                <div class="method-card">
+                    <h4>Análise Técnica</h4>
+                    <p>Baseada em ciência, dados e avaliação de riscos</p>
+                </div>
+                <div class="method-card">
+                    <h4>Estruturação de Governança</h4>
+                    <p>Modelos robustos de compliance e gestão</p>
+                </div>
+                <div class="method-card">
+                    <h4>Integração ESG</h4>
+                    <p>Estratégia corporativa + finanças + ESG</p>
+                </div>
+                <div class="method-card">
+                    <h4>Gestão de Riscos</h4>
+                    <p>Leitura profunda de riscos regulatórios, ambientais, sociais e reputacionais</p>
+                </div>
+            </div>
+            
+            <div class="results-box">
+                <h3>Resultado</h3>
+                <div class="results-list">
+                    <div class="result-item"><i class="fas fa-check"></i> Menos incerteza</div>
+                    <div class="result-item"><i class="fas fa-check"></i> Mais previsibilidade</div>
+                    <div class="result-item"><i class="fas fa-check"></i> Mais segurança para crescer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENTREGÁVEIS -->
+    <section id="entregaveis">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Serviços & Soluções</div>
+                <h2 class="section-title">O que entregamos na prática</h2>
+            </div>
+            
+            <div class="deliverables-grid">
+                <div class="deliverable-item">
+                    <div class="deliverable-icon"><i class="fas fa-clipboard-check"></i></div>
+                    <div class="deliverable-content">
+                        <h4>Diagnósticos Estratégicos</h4>
+                        <p>Análises de materialidade orientadas ao negócio</p>
+                    </div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="deliverable-icon"><i class="fas fa-sitemap"></i></div>
+                    <div class="deliverable-content">
+                        <h4>Estruturação de Governança</h4>
+                        <p>Modelos de governança, comitês e fluxos decisórios</p>
+                    </div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="deliverable-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="deliverable-content">
+                        <h4>Integração ESG</h4>
+                        <p>ESG integrado à estratégia corporativa e gestão de riscos</p>
+                    </div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="deliverable-icon"><i class="fas fa-money-bill-wave"></i></div>
+                    <div class="deliverable-content">
+                        <h4>Estruturação de Projetos</h4>
+                        <p>Projetos elegíveis a financiamentos sustentáveis</p>
+                    </div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="deliverable-icon"><i class="fas fa-search"></i></div>
+                    <div class="deliverable-content">
+                        <h4>Preparação para Auditorias</h4>
+                        <p>Suporte para investidores, bancos e órgãos reguladores</p>
+                    </div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="deliverable-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="deliverable-content">
+                        <h4>Indicadores & Métricas</h4>
+                        <p>Critérios de desempenho ESG mensuráveis</p>
+                    </div>
+                </div>
+                <div class="deliverable-item">
+                    <div class="deliverable-icon"><i class="fas fa-users"></i></div>
+                    <div class="deliverable-content">
+                        <h4>Apoio à Alta Liderança</h4>
+                        <p>Suporte direto a CEOs, CFOs, conselhos e executivos</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 50px; font-size: 1.3rem; font-weight: 600; color: var(--lumina-blue);">
+                Traduzimos exigências técnicas, científicas e regulatórias em <strong>decisões executáveis</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- PARA QUEM -->
+    <section id="para-quem">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Público-Alvo</div>
+                <h2 class="section-title">Para quem a Lumina é essencial</h2>
+                <p class="section-subtitle">Soluções estratégicas para empresas que:</p>
+            </div>
+            
+            <div class="target-grid">
+                <div class="target-card">
+                    <i class="fas fa-gavel"></i>
+                    <h4>Atuam em setores regulados</h4>
+                </div>
+                <div class="target-card">
+                    <i class="fas fa-university"></i>
+                    <h4>Dependem de financiamento estruturado</h4>
+                </div>
+                <div class="target-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h4>Participam de cadeias complexas de fornecimento</h4>
+                </div>
+                <div class="target-card">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h4>Operam sob risco ambiental, social ou regulatório</h4>
+                </div>
+                <div class="target-card">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h4>Desejam acessar capital mais barato</h4>
+                </div>
+                <div class="target-card">
+                    <i class="fas fa-clock"></i>
+                    <h4>Precisam estruturar governança com rapidez e segurança</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SETORES -->
+    <section id="setores">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Público-Alvo</div>
+                <h2 class="section-title">Especial Atenção Para</h2>
+            </div>
+            
+            <div class="sectors-grid">
+                <div class="sector-card">
+                    <i class="fas fa-building"></i>
+                    <h4>Construção Civil</h4>
+                </div>
+                <div class="sector-card">
+                    <i class="fas fa-road"></i>
+                    <h4>Infraestrutura</h4>
+                </div>
+                <div class="sector-card">
+                    <i class="fas fa-truck"></i>
+                    <h4>Mobilidade e Logística</h4>
+                </div>
+                <div class="sector-card">
+                    <i class="fas fa-industry"></i>
+                    <h4>Indústria Enerointensivas</h4>
+                </div>
+                <div class="sector-card">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Energia</h4>
+                </div>
+                <div class="sector-card">
+                    <i class="fas fa-link"></i>
+                    <h4>Cadeias Produtivas</h4>
+                </div>
+                <div class="sector-card">
+                    <i class="fas fa-landmark"></i>
+                    <h4>Gestores Públicos</h4>
+                </div>
+                <div class="sector-card">
+                    <i class="fas fa-file-contract"></i>
+                    <h4>Empresas SBCE</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section id="diferenciais">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Competências Únicas</div>
+                <h2 class="section-title">O Diferencial Lumina</h2>
+            </div>
+            
+            <div class="manifesto-text">
+                <p>Por trás da Lumina Impact, existe uma <strong>combinação única de competências</strong>.</p>
+                <p>A Lumina nasce da união de três trajetórias altamente especializadas e complementares, que atuam exatamente nos <strong>pontos críticos da agenda ESG moderna</strong>:</p>
+                
+                <div class="competencies-highlight">
+                    Estratégia + Finanças + Governança + Ciência + Regulação + Impacto Social
+                </div>
+                
+                <div class="manifesto-statement">
+                    Não somos um time de consultores.<br>
+                    <strong>Somos uma estrutura estratégica de decisão.</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPETÊNCIAS -->
+    <section id="competencias">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Visão Integrada</div>
+                <h2 class="section-title">A Complementaridade que Gera Decisões Melhores</h2>
+            </div>
+            
+            <div class="competencies-matrix">
+                <div class="competency-column">
+                    <h3>Competências Principais</h3>
+                    <ul class="competency-list">
+                        <li><i class="fas fa-check-circle"></i> Estratégia & Finanças</li>
+                        <li><i class="fas fa-check-circle"></i> Governança & Jurídico</li>
+                        <li><i class="fas fa-check-circle"></i> Ciência & Clima</li>
+                    </ul>
+                </div>
+                
+                <div class="competency-column">
+                    <h3>Capacidades</h3>
+                    <ul class="competency-list">
+                        <li><i class="fas fa-arrow-right"></i> Viabilidade econômica</li>
+                        <li><i class="fas fa-arrow-right"></i> Segurança jurídica</li>
+                        <li><i class="fas fa-arrow-right"></i> Base científica</li>
+                        <li><i class="fas fa-arrow-right"></i> Acesso a financiamento</li>
+                        <li><i class="fas fa-arrow-right"></i> Compliance</li>
+                        <li><i class="fas fa-arrow-right"></i> Gestão climática</li>
+                        <li><i class="fas fa-arrow-right"></i> Política pública</li>
+                        <li><i class="fas fa-arrow-right"></i> Gestão de riscos</li>
+                        <li><i class="fas fa-arrow-right"></i> Métricas ambientais</li>
+                        <li><i class="fas fa-arrow-right"></i> Estruturação institucional</li>
+                        <li><i class="fas fa-arrow-right"></i> Proteção reputacional</li>
+                        <li><i class="fas fa-arrow-right"></i> Impacto mensurável</li>
+                    </ul>
+                </div>
+                
+                <div class="competency-column">
+                    <h3>Resultados</h3>
+                    <ul class="competency-list">
+                        <li><i class="fas fa-star"></i> Decisões mais seguras</li>
+                        <li><i class="fas fa-star"></i> Projetos mais viáveis</li>
+                        <li><i class="fas fa-star"></i> Menor risco regulatório</li>
+                        <li><i class="fas fa-star"></i> Maior acesso a capital</li>
+                        <li><i class="fas fa-star"></i> Maior credibilidade institucional</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPE -->
+    <section id="equipe">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Equipe Executiva</div>
+                <h2 class="section-title">Quem Lidera a Lumina</h2>
+            </div>
+            
+            <div class="team-grid">
+                <!-- Eliana Alves -->
+                <div class="team-card">
+                    <div class="team-photo">EA</div>
+                    <div class="team-content">
+                        <h3 class="team-name">Eliana Alves</h3>
+                        <p class="team-role">Sócia | Diretora Comercial & Institucional</p>
+                        <div class="team-tags">
+                            <span class="tag tag-blue">Estratégia</span>
+                            <span class="tag tag-teal">Finanças</span>
+                            <span class="tag tag-green">Mobilidade</span>
+                            <span class="tag tag-gold">Política Pública</span>
+                        </div>
+                        <p class="team-bio">Executiva com <strong>17 anos de experiência</strong> em finanças, governança e estratégia, atuando em ambientes de alta complexidade, elevado CAPEX e forte regulação. Atua na interseção entre indústria, financiamento e política pública.</p>
+                        <ul class="team-highlights">
+                            <li><i class="fas fa-check-circle"></i> Liderança em projetos de mobilidade elétrica</li>
+                            <li><i class="fas fa-check-circle"></i> Estruturação de decisões estratégicas de alto impacto</li>
+                            <li><i class="fas fa-check-circle"></i> Comissão nacional do MDIC / CEPAL</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Ketty Fillens Gurgel -->
+                <div class="team-card">
+                    <div class="team-photo">KG</div>
+                    <div class="team-content">
+                        <h3 class="team-name">Ketty Fillens Gurgel</h3>
+                        <p class="team-role">Sócia | Diretora Jurídica & Governança</p>
+                        <div class="team-tags">
+                            <span class="tag tag-blue">Governança</span>
+                            <span class="tag tag-teal">Jurídico</span>
+                            <span class="tag tag-green">Compliance</span>
+                            <span class="tag tag-gold">ESG</span>
+                        </div>
+                        <p class="team-bio">Advogada gestora com <strong>24 anos de experiência</strong>, especialista em governança, compliance, gestão de riscos, contratos estratégicos e ESG.</p>
+                        <ul class="team-highlights">
+                            <li><i class="fas fa-check-circle"></i> Implantação de modelos robustos de governança</li>
+                            <li><i class="fas fa-check-circle"></i> Estruturação de compliance e políticas anticorrupção</li>
+                            <li><i class="fas fa-check-circle"></i> Gestão de riscos regulatórios e jurídicos complexos</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Leuda da Silva Oliveira -->
+                <div class="team-card">
+                    <div class="team-photo">LO</div>
+                    <div class="team-content">
+                        <h3 class="team-name">Leuda Oliveira</h3>
+                        <p class="team-role">Sócia | Diretora Científica & ESG</p>
+                        <div class="team-tags">
+                            <span class="tag tag-green">Ciência</span>
+                            <span class="tag tag-teal">ESG</span>
+                            <span class="tag tag-green">Clima</span>
+                            <span class="tag tag-gold">Energia</span>
+                        </div>
+                        <p class="team-bio">Cientista climática, <strong>Doutora em Ciências Atmosféricas (USP)</strong>, com trajetória sólida em clima, energia, meio ambiente, sustentabilidade e ciência aplicada.</p>
+                        <ul class="team-highlights">
+                            <li><i class="fas fa-check-circle"></i> Pós-doutorados em clima e saúde</li>
+                            <li><i class="fas fa-check-circle"></i> Atuação sênior na FGV</li>
+                            <li><i class="fas fa-check-circle"></i> Especialista em mudanças climáticas e emissões</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="cta-final">
+        <div class="container">
+            <img src="https://www.genspark.ai/api/files/s/5KKipCx3" alt="Lumina Impact" class="cta-logo">
+            
+            <div class="cta-messages">
+                <div class="cta-message"><strong>ESG que protege valor.</strong></div>
+                <div class="cta-message"><strong>Estratégia que gera impacto real.</strong></div>
+                <div class="cta-message"><strong>Decisão que sustenta o crescimento.</strong></div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="mailto:contato@luminaimpact.com.br" class="btn-primary">Entre em Contato</a>
+                <a href="#quem-somos" class="btn-secondary">Saiba Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>Lumina Impact</h3>
+                <p>Consultoria estratégica em ESG que transforma estratégia em impacto real. Protegemos valor, viabilizamos crescimento e garantimos acesso ao capital.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="#quem-somos">Quem Somos</a></li>
+                    <li><a href="#abordagem">Nossa Abordagem</a></li>
+                    <li><a href="#equipe">Equipe</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="#entregaveis">Diagnósticos ESG</a></li>
+                    <li><a href="#entregaveis">Governança</a></li>
+                    <li><a href="#entregaveis">Compliance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Contato</h4>
+                <ul>
+                    <li><a href="mailto:contato@luminaimpact.com.br">Email</a></li>
+                    <li><a href="tel:+5511999999999">Telefone</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lumina Impact. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for sections animation
+        const sections = document.querySelectorAll('section');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
